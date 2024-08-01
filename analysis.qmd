@@ -1,0 +1,43 @@
+---
+title: "Longevity After Election Age"
+author: "Nicholas Oliver Silveira Powell"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+library(tidyverse)
+library(primer.data)
+library(tidybayes)
+library(brms)
+library(gtsummary)
+```
+
+preceptor table:
+  unit: individual mayor candidates 2000-2050
+  potential outcomes: lived_after loss, lived_after won
+  treatment: whether or not they won
+  covariates: sex, age, political party
+
+validity:
+  These are governors not mayors
+  
+stability:
+  life expectancy has changed from 1965
+  
+representativeness:
+  losing candidates don't have nearly as much data as winning candidates
+  
+unconfoudedness:
+  we do not control the disbursement of the treatment, (almost every covariate influences whether a candidate wins or loses)
+
+
+population table:
+  unit: individual candidates from 1948-2050
+  potential outcomes: lived_after loss, lived_after won
+  treatment: whether or not they won
+  covariates: sex, age, political party
